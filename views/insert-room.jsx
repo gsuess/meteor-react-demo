@@ -42,7 +42,11 @@ InsertRoomForm = React.createClass({
     handleSubmit(event) {
         event.preventDefault();
 
-        console.log(this.state);
+        Rooms.insert({
+            createdAt: new Date(),
+            name: this.state.name,
+            description: this.state.desc
+        });
 
         FlowRouter.go('lobby');
     },

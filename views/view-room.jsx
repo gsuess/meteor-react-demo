@@ -1,44 +1,66 @@
 ViewRoom = {
 
+    header() {
+        return <RoomHeader roomId={FlowRouter.current().params._id}/>
+    },
+
+    content() {
+        return <RoomContent roomId={FlowRouter.current().params._id}/>
+    },
+
+    footer() {
+        return <MessageEditor roomId={FlowRouter.current().params._id}/>
+    }
+};
+
+RoomHeader = React.createClass({
+    mixins: [ReactMeteorData],
+
     goBack() {
         FlowRouter.go('lobby');
     },
 
-    header() {
+    getMeteorData() {
+        return Rooms.findOne(this.props.roomId, {fields: {name: 1}});
+    },
+
+    render() {
         return <MUI.AppBar
-            title="Room Title"
+            title={this.data.name}
             iconElementLeft={
                 <MUI.IconButton onClick={this.goBack}>
                     <MUI.Libs.SvgIcons.NavigationArrowBack />
                 </MUI.IconButton>
             }/>
-    },
-
-    content() {
-        return <RoomContent />
-    },
-
-    footer() {
-        return <MessageEditor />
     }
-};
+});
 
 RoomContent = React.createClass({
 
+    mixins: [ReactMeteorData],
+
+    getMeteorData() {
+        let roomId = this.props.roomId;
+        return {
+            roomId: roomId,
+            posts: Posts.find({roomId: roomId}, {createdAt: -1}).fetch()
+        };
+    },
+
     render() {
         return <div style={{padding: 20}}>
-            <UserComment></UserComment><UserComment></UserComment><UserComment></UserComment>
+            {this.data.posts.map(function (post) {
+                return <UserComment key={post._id} post={post}/>
+            })}
         </div>
     }
-
 });
 
 UserComment = React.createClass({
-
     render() {
         return <MUI.Card style={{marginBottom: 10}}>
             <MUI.CardText>
-                Lorem Ipsum
+                {this.props.post.text}
             </MUI.CardText>
         </MUI.Card>
     }
@@ -59,7 +81,11 @@ MessageEditor = React.createClass({
     },
 
     submitMessage() {
-        console.log(this.state.message);
+        Posts.insert({
+            createdAt: new Date(),
+            roomId: this.props.roomId,
+            text: this.state.message
+        });
         this.refs.messageInput.setValue("");
         this.refs.messageInput.focus();
     },

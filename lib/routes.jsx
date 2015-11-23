@@ -27,7 +27,7 @@ FlowRouter.route("/room/insert", {
 });
 
 
-FlowRouter.route("/room/view", {
+FlowRouter.route("/room/view/:_id", {
     name: "viewRoom",
 
     subscriptions () {

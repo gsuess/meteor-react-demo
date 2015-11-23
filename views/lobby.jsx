@@ -16,14 +16,18 @@ Lobby = {
 
 
 RoomList = React.createClass({
+    mixins: [ReactMeteorData],
+
+    getMeteorData() {
+        return {rooms: Rooms.find({}, {sort: {createdAt: 1}}).fetch()};
+    },
+
     render() {
         return (
             <MUI.List subheader="Available Chat Rooms">
-                <RoomListItem name="Room 1"/>
-                <RoomListItem name="Room 2"/>
-                <RoomListItem name="Room 3"/>
-                <RoomListItem name="Room 4"/>
-                <RoomListItem name="Room 5"/>
+                {this.data.rooms.map(function (room) {
+                    return <RoomListItem key={room._id} room={room}/>
+                })}
             </MUI.List>
         );
     }
@@ -31,16 +35,17 @@ RoomList = React.createClass({
 
 RoomListItem = React.createClass({
     visitRoom() {
-        FlowRouter.go('viewRoom');
+        FlowRouter.go('viewRoom', {_id: this.props.room._id});
     },
 
     render() {
+        let {room} = this.props;
         return <MUI.ListItem
             onClick={this.visitRoom}
             leftAvatar={
-                <MUI.Avatar>{this.props.name[0]}</MUI.Avatar>
+                <MUI.Avatar>{room.name[0]}</MUI.Avatar>
             }
-            primaryText={this.props.name}
-            secondaryText="Room Description"/>
+            primaryText={room.name}
+            secondaryText={room.description}/>
     }
 });
