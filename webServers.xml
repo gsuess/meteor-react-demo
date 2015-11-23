@@ -1,0 +1,25 @@
+<application>
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="87137ff9-79d8-41f9-a3d1-660cdeaf6c5d" name="production" url="http://incidenceshop.de">
+        <fileTransfer host="incidenceshop.de" port="22" privateKey="$USER_HOME$/.ssh/id_rsa" accessType="SFTP" username="gsuess" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="2f5469ab-e7c0-4f01-997d-d056ee12b212" name="keen-web-packages" url="http://localhost:3000">
+        <fileTransfer mountedRoot="$USER_HOME$/WebstormProjects/keen-web/packages" accessType="MOUNT" />
+      </webServer>
+      <webServer id="6f60ee19-c905-453d-a9db-85db2835760f" name="comparator-packages" url="http://localhost:3000">
+        <fileTransfer mountedRoot="$USER_HOME$/WebstormProjects/extract-service-comparator/app/packages" accessType="MOUNT" />
+      </webServer>
+      <webServer id="8be59e14-fef0-4915-bf83-fa385765c2b2" name="keen-iframely-package" url="http://localhost">
+        <fileTransfer mountedRoot="$USER_HOME$/WebstormProjects/keen-web-extractor-iframely/packages" accessType="MOUNT" />
+      </webServer>
+      <webServer id="9420fa3f-dd90-483a-956e-7eb92e7dbd6f" name="keen-embledly-package" url="http://localhost">
+        <fileTransfer mountedRoot="$USER_HOME$/WebstormProjects/keen-web-extractor-embedly/packages" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</application>

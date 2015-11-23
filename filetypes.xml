@@ -1,0 +1,21 @@
+<application>
+  <component name="FileTypeManager" version="16">
+    <ignoreFiles list="*.hprof;*.pyc;*.pyo;*.rbc;*~;.DS_Store;.git;.hg;.svn;CVS;RCS;SCCS;__pycache__;_svn;rcs;" />
+    <extensionMap>
+      <mapping pattern="smart.lock" type="JSON" />
+      <mapping pattern="Gemfile" type="PLAIN_TEXT" />
+      <mapping pattern=".buildpacks" type="PLAIN_TEXT" />
+      <mapping pattern="nodeversion" type="PLAIN_TEXT" />
+      <mapping pattern=".env" type="PLAIN_TEXT" />
+      <mapping pattern="compile" type="PLAIN_TEXT" />
+      <mapping pattern=".gitkeep" type="PLAIN_TEXT" />
+      <mapping pattern="Procfile" type="PLAIN_TEXT" />
+      <mapping pattern=".editorconfig" type="PLAIN_TEXT" />
+      <mapping pattern="Aptfile" type="PLAIN_TEXT" />
+      <mapping ext="svg" type="PLAIN_TEXT" />
+      <mapping ext="0" type="PLAIN_TEXT" />
+      <mapping ext="subscribe" type="PLAIN_TEXT" />
+      <mapping ext="lessimport" type="LESS" />
+    </extensionMap>
+  </component>
+</application>
