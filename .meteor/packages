@@ -20,7 +20,7 @@ autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 react
 izzilab:material-ui
-kadira:flow-router
+kadira:flow-router-ssr
 kadira:react-layout
 less
 meyerweb-reset          # Reset CSS Styles

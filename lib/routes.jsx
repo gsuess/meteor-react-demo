@@ -55,3 +55,7 @@ function wrapAction (fn) {
         return result;
     }
 }
+
+if(Meteor.isServer) {
+    FlowRouter.setDeferScriptLoading(true);
+}
