@@ -70,13 +70,14 @@
       <option name="loginAnonymously" value="false" />
       <option name="preferredCloseTaskState" />
       <option name="preferredOpenTaskState" />
-      <option name="searchQuery" value="assignee = currentUser() and resolution = Unresolved order by updated" />
-      <option name="shouldFormatCommitMessage" value="false" />
+      <option name="searchQuery" value="assignee=currentUser() and resolution = Unresolved order by updated" />
+      <option name="shouldFormatCommitMessage" value="true" />
       <option name="useHttpAuthentication" value="false" />
       <option name="useProxy" value="false" />
       <username>garik</username>
     </JIRA>
     <GitHub shared="false" url="https://github.com">
+      <option name="assignedIssuesOnly" value="false" />
       <commitMessageFormat>{id} {summary}</commitMessageFormat>
       <password />
       <token>dfccdf9adf9bdf9adf9fdfc9df9bdfcbdf99df9edf9adf9edf9ddf9bdf99dfccdf9edf9cdf9ddf9ddf9cdf9edf9fdf9bdf92dfcfdf92df9bdfcfdfcbdfccdfc9df92dfcfdfcfdf9ddf98df9cdfcbdfc8</token>
