@@ -6,6 +6,7 @@
       <mapping pattern="Gemfile" type="PLAIN_TEXT" />
       <mapping pattern=".buildpacks" type="PLAIN_TEXT" />
       <mapping pattern="nodeversion" type="PLAIN_TEXT" />
+      <mapping pattern=".foreman" type="PLAIN_TEXT" />
       <mapping pattern=".env" type="PLAIN_TEXT" />
       <mapping pattern="compile" type="PLAIN_TEXT" />
       <mapping pattern=".gitkeep" type="PLAIN_TEXT" />
